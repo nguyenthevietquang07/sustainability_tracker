@@ -23,14 +23,28 @@ A full-stack web application for managing and tracking sustainability actions, b
 ## Project Structure
 
 ```
-sustainability_tracker/
-├── sustainability_backend/     # Django project
-│   ├── actions/               # Django app
-│   └── sustainability_backend/
-├── sustainability-frontend/    # React app
-│   ├── src/
+├── sustainability_backend/          # Django REST API backend
+│   ├── actions/                     # Django app
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── sustainability_backend/      # Django project settings
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── asgi.py
+│   │   └── wsgi.py
+│   ├── manage.py
+│   └── requirements.txt             # Python dependencies
+├── sustainability-frontend/         # React frontend
+│   ├── public/                      # Static assets
+│   ├── src/                         # React source code
+│   ├── package.json                 # Node.js dependencies
+│   └── package-lock.json
+├── .gitignore
 └── README.md
-```
+``````
 
 ---
 
