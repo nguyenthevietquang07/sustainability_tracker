@@ -1,63 +1,100 @@
-Sustainability Actions Tracker
-A full-stack web application for managing and tracking sustainability actions. Built with Django REST Framework backend and React frontend.
+# Sustainability Actions Tracker
 
-Features
-Backend API: RESTful API for CRUD operations on sustainability actions
+A full-stack web application for managing and tracking sustainability actions, built with Django REST Framework (backend) and React (frontend).
 
-Frontend Interface: React-based UI to view, add, edit, and delete actions
+---
 
-Data Model: Track action name, date, and points earned
+## Features
 
-Responsive Design: Clean table layout with form controls
+- RESTful API for CRUD operations on sustainability actions  
+- Modern React UI to view, add, edit, and delete actions  
+- Track action name, date, and points earned  
+- Responsive, clean table layout and form controls
 
-Tech Stack
-Backend
-Django 4.2+
+---
 
-Django REST Framework
+## Tech Stack
 
-SQLite database
+- **Backend:** Django 4.2+, Django REST Framework, SQLite, django-cors-headers
+- **Frontend:** React 18+, Axios
 
-django-cors-headers
+---
 
-Frontend
-React 18+
+## Project Structure
 
-Axios for API calls
-
-Functional components with hooks
-
-Project Structure
-
+```
 sustainability_tracker/
 ├── sustainability_backend/     # Django project
 │   ├── actions/               # Django app
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   ├── sustainability_backend/
-│   │   ├── settings.py
-│   │   └── urls.py
-│   └── manage.py
+│   └── sustainability_backend/
 ├── sustainability-frontend/    # React app
 │   ├── src/
-│   │   ├── components/
-│   │   │   ├── ActionList.js
-│   │   │   └── ActionForm.js
-│   │   ├── services/
-│   │   │   └── api.js
-│   │   ├── App.js
-│   │   └── App.css
-│   └── package.json
 └── README.md
+```
 
-Setup Instructions
-Prerequisites
-Python 3.8+
+---
 
-Node.js 14+
+## Setup Instructions
 
-pip (Python package manager)
+### Backend
 
-npm (Node package manager)
+```bash
+cd sustainability_tracker
+python -m venv venv        # or python3 -m venv venv
+source venv/bin/activate   # (Linux/macOS) or venv\Scripts\activate (Windows)
+pip install django djangorestframework django-cors-headers
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+Backend available at: [http://localhost:8000](http://localhost:8000)
+
+---
+
+### Frontend
+
+```bash
+cd sustainability-frontend
+npm install
+npm start
+```
+
+Frontend available at: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## API Reference
+
+**Action Object**
+```json
+{
+  "id": 1,
+  "action": "Recycling",
+  "date": "2025-01-08",
+  "points": 25
+}
+```
+
+**Endpoints**
+
+- `GET /api/actions/` — Retrieve all actions
+- `POST /api/actions/` — Create new action
+- `GET /api/actions/{id}/` — Retrieve specific action
+- `PUT /api/actions/{id}/` — Update specific action
+- `DELETE /api/actions/{id}/` — Delete specific action
+
+---
+
+## Troubleshooting
+
+- **CORS Errors:**  
+  Make sure `django-cors-headers` is installed and `CORS_ALLOWED_ORIGINS` includes `http://localhost:3000` in `settings.py`.
+
+- **Connection Errors:**  
+  Check that both servers are running and the API URL in `src/services/api.js` matches your backend.
+
+- **Database Issues:**  
+  Run migrations and ensure the SQLite database file is writable.
+
+---
