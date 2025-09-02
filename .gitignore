@@ -1,17 +1,12 @@
-<<<<<<< HEAD
 # Dependencies
 node_modules/
 venv/
 
 # Database files
-=======
-# Database
->>>>>>> 6cdbf5ff9e28d601b6a86d33395c8b088ea6c9e8
 *.db
 *.sqlite
 *.sqlite3
 
-<<<<<<< HEAD
 # Environment variables
 .env
 .env.local
@@ -19,8 +14,3 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
-=======
-# Dependencies
-node_modules/
-venv/
->>>>>>> 6cdbf5ff9e28d601b6a86d33395c8b088ea6c9e8
