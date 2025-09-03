@@ -15,9 +15,9 @@ const ActionList = ({ actions, onEdit, onDelete }) => {
           </tr>
         </thead>
         <tbody>
-          {actions.map(action => (
+          {actions.map((action, index) => (
             <tr key={action.id}>
-              <td>{action.id}</td>
+              <td>{index + 1}</td>
               <td>{action.action}</td>
               <td>{action.date}</td>
               <td>{action.points}</td>
